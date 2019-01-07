@@ -1,1 +1,1 @@
-module.exports = require('@toba/develop/jest');
+module.exports = require('@toba/test/jest');
