@@ -1,0 +1,37 @@
+{
+   "name": "@toba/user",
+   "version": "1.0.0",
+   "description": "Toba user module",
+   "private": false,
+   "author": {
+      "name": "Jason Abbott",
+      "url": "http://github.com/toba"
+   },
+   "license": "MIT",
+   "publishConfig": {
+      "access": "public"
+   },
+   "main": "dist/index.js",
+   "types:": "dist/index.d.ts",
+   "files": [
+      "dist/**/*"
+   ],
+   "scripts": {
+      "prepublishOnly": "./node_modules/.bin/tsc --project tsconfig.build.json",
+      "test": "jest --coverage"
+   },
+   "devDependencies": {
+      "@firebase/app-types": "^0.3.2",
+      "@firebase/auth-types": "^0.5.0",
+      "@toba/develop": "^4.0.0",
+      "@toba/test": "^3.0.0"
+   },
+   "repository": {
+      "type": "git",
+      "url": "https://github.com/toba/user"
+   },
+   "dependencies": {
+      "@firebase/app": "^0.3.5",
+      "@firebase/auth": "^0.9.1"
+   }
+}
