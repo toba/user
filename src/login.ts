@@ -1,5 +1,4 @@
 import firebase from '@firebase/app';
-//import { FirebaseApp } from '@firebase/app-types';
 import '@firebase/auth';
 import { FirebaseApp } from '@firebase/app-types';
 
@@ -7,6 +6,7 @@ export interface AuthConfig {
    apiKey: string;
    projectID: string;
    senderID: string;
+   provider: string[];
 }
 
 export const initialize = (config: AuthConfig): FirebaseApp =>
@@ -18,3 +18,5 @@ export const initialize = (config: AuthConfig): FirebaseApp =>
       storageBucket: `${config.projectID}.appspot.com`,
       messagingSenderId: config.senderID
    });
+
+
