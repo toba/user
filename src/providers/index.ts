@@ -33,5 +33,9 @@ export enum ErrorCode {
     * Firebase project. Edit the list of authorized domains from the Firebase
     * console.
     */
-   UnauthorizedDomain = 'auth/unauthorized-domain'
+   UnauthorizedDomain = 'auth/unauthorized-domain',
+   /**
+    * Account e
+    */
+   AccountExistsWithDifferentCredential = 'auth/account-exists-with-different-credential'
 }
