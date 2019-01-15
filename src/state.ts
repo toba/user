@@ -2,7 +2,12 @@ import '@firebase/auth';
 import firebase from '@firebase/app';
 import { is } from '@toba/tools';
 import { StateStore, flux } from '@toba/state';
-import { FirebaseAuth, User, AuthProvider } from '@firebase/auth-types';
+import {
+   FirebaseAuth,
+   User,
+   AuthProvider,
+   UserCredential
+} from '@firebase/auth-types';
 import { Provider } from './providers';
 import { Action } from './actions';
 
@@ -66,8 +71,12 @@ class UserState extends StateStore<State> {
             emailVerified: user.emailVerified
          });
       } else {
-         this.setState({ ...emptyState, initialized: true });
+         this.clear();
       }
+   };
+
+   clear = () => {
+      this.setState({ ...emptyState, initialized: true });
    };
 
    async handler(action: Action, data?: any) {
@@ -75,17 +84,29 @@ class UserState extends StateStore<State> {
          case Action.Login:
             if (this.providers.has(data)) {
                const provider = this.providers.get(data)!;
-               const res = await this.auth.signInWithPopup(provider);
+               try {
+                  this.auth.signInWithRedirect(provider);
+                  // onAuthChange will handle response
+               } catch (err) {
+                  this.clear();
+               }
+            } else {
+               console.error(`Provider "${data}" is not defined`);
             }
             return;
 
          case Action.Connect:
             if (is.array<string>(data)) {
                this.initialize(...data);
+            } else {
+               console.error(
+                  'Provider IDs must be supplied to initialize authentication'
+               );
             }
             return;
 
          case Action.Logout:
+            this.auth.signOut();
             return;
       }
       return;

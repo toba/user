@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import { renderOnLoad } from '@toba/example';
 import { Provider, initialize, userState, UserState, Action } from '../../src/';
 import { FluxComponent } from '@toba/state';
 import { NavBar } from './navbar';
@@ -18,7 +18,7 @@ initialize({
 
 export class ExampleApp extends FluxComponent<any, State> {
    constructor(props: any) {
-      super(props, { user: userState }, { error: null });
+      super(props, { user: userState, error: null });
       this.emit(Action.Connect, [Provider.Facebook, Provider.Google]);
    }
 
@@ -32,6 +32,4 @@ export class ExampleApp extends FluxComponent<any, State> {
    }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-   ReactDOM.render(<ExampleApp />, document.getElementById('app-root'));
-});
+renderOnLoad(<ExampleApp />);
