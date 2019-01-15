@@ -1,8 +1,8 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { Provider, initialize } from '../../src/';
+import { Provider, initialize, userState, UserState, Action } from '../../src/';
 import { FluxComponent } from '@toba/state';
-import { userState, UserState, Action } from '../../src';
+import { NavBar } from './navbar';
 
 interface State {
    user: UserState;
@@ -19,23 +19,19 @@ initialize({
 export class ExampleApp extends FluxComponent<any, State> {
    constructor(props: any) {
       super(props, { user: userState }, { error: null });
-      this.emit(Action.Initialize, [Provider.Facebook, Provider.Google]);
+      this.emit(Action.Connect, [Provider.Facebook, Provider.Google]);
    }
 
    render() {
       return (
          <div>
+            <NavBar />
             <h2>Example Application</h2>
-            {this.state.user !== null && <div>{this.state.user.name}</div>}
-            {this.state.error !== null && <div>{this.state.error.message}</div>}
-            <button onClick={this.do(Action.Login, Provider.Facebook)}>
-               Facebook Login
-            </button>
          </div>
       );
    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-   ReactDOM.render(<ExampleApp />, document.getElementsByTagName('body')[0]);
+   ReactDOM.render(<ExampleApp />, document.getElementById('app-root'));
 });

@@ -79,7 +79,7 @@ class UserState extends StateStore<State> {
             }
             return;
 
-         case Action.Initialize:
+         case Action.Connect:
             if (is.array<string>(data)) {
                this.initialize(...data);
             }

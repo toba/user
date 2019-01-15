@@ -1,5 +1,8 @@
 export enum Action {
-   Initialize = 1000,
+   /**
+    * Connect to Firebase authentication service.
+    */
+   Connect = 1000,
    Login,
    Logout
 }
