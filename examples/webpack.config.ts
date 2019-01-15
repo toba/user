@@ -1,6 +1,6 @@
 import { buildExample } from '@toba/build';
 export default buildExample({
-   minimize: false,
+   minimize: true,
    isDevMode: true,
-   reactDevMode: true
+   reactDevMode: false
 });

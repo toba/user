@@ -835,9 +835,9 @@
   integrity sha512-shAmDyaQC4H92APFoIaVDHCx5bStIocgvbwQyxPRrbUY20V1EYTbSDchWbuwlMG3V17cprZhA6+78JfB+3DTPw==
 
 "@toba/build@^4.4.4":
-  version "4.5.5"
-  resolved "https://registry.yarnpkg.com/@toba/build/-/build-4.5.5.tgz#3977795b8bef0d101c290e5b0207c4713ed2f4a4"
-  integrity sha512-QMYRPfpw80AlajwtV9fXpYNMa4nE3SSjni5POb99DoEcDH5hSeEICZVyQlCsV3xDJOztQGqjWvvkPNlrDPismg==
+  version "4.5.6"
+  resolved "https://registry.yarnpkg.com/@toba/build/-/build-4.5.6.tgz#eacfc4cad28b600ab997f3807a46bfcb8121f774"
+  integrity sha512-MQknLF/MmP5bcn+XFsrAnGMqYXgtSFopReorgZdRmh0lbjDrE+Gs5YFqnUAx45rYBhbiv2/hfWDWdOU3WwwHVw==
   dependencies:
     "@babel/core" "^7.2.2"
     "@babel/polyfill" "^7.2.5"
@@ -862,7 +862,7 @@
     ts-loader "^5.3.0"
     ts-node "^7.0.1"
     uglifyjs-webpack-plugin "^2.0.1"
-    webpack "4.26.1"
+    webpack "4.28.4"
     webpack-cli "3.1.2"
     webpack-deep-scope-plugin "^1.6.0"
     webpack-dev-server "^3.1.10"
@@ -891,6 +891,11 @@
     "@types/react-dom" "^16.0.11"
     react "^16.7.0"
     react-dom "^16.7.0"
+
+"@toba/state@^2.0.0":
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/@toba/state/-/state-2.0.3.tgz#31e48463141cf552e75cf3ba869f90c1e54e6943"
+  integrity sha512-i2hs8UHUVPbl3yKCQISzE7BQOTQ8ZNxKvclZWmyX/FRF1h7/bVrMSP0VU92Awge2FXlX2cDUUmI5DtmzwqfYVw==
 
 "@toba/test@^3.0.0":
   version "3.1.1"
@@ -3422,9 +3427,9 @@ ee-first@1.1.1:
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
 electron-to-chromium@^1.3.100:
-  version "1.3.102"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.102.tgz#3ac43a037c8a63bca3dfa189eb3d90f097196787"
-  integrity sha512-2nzZuXw/KBPnI3QX3UOCSRvJiVy7o9+VHRDQ3D/EHCvVc89X6aj/GlNmEgiR2GBIhmSWXIi4W1M5okA5ScSlNg==
+  version "1.3.103"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.103.tgz#a695777efdbc419cad6cbb0e58458251302cd52f"
+  integrity sha512-tObPqGmY9X8MUM8i3MEimYmbnLLf05/QV5gPlkR8MQ3Uj8G8B2govE1U4cQcBYtv3ymck9Y8cIOu4waoiykMZQ==
 
 elliptic@^6.0.0:
   version "6.4.1"
@@ -5984,9 +5989,9 @@ markdown-table@^1.1.0:
   integrity sha512-NcWuJFHDA8V3wkDgR/j4+gZx+YQwstPgfQDV8ndUeWWzta3dnDTBxpVzqS9lkmJAuV5YX35lmyojl6HO5JXAgw==
 
 math-random@^1.0.1:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/math-random/-/math-random-1.0.2.tgz#8ab7f026363816c1e00b774d87dee67f61e37ad6"
-  integrity sha512-Bp2Bx2wFaUymE7pWi0bbldiheIXMvyzC3hRkT5YAv2qiqqJO5VB8KafgYgZmGCxkTmloLuAx3Jv2OmJ66990mg==
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/math-random/-/math-random-1.0.3.tgz#5843d8307f8d2fd83de240701eeb2dc7bc77a104"
+  integrity sha512-hULdrPg17lCyaJOrDwS4RSGQcc/MFyv1aujidohCsBq2zotkhIns8mMDQ7B8VnKG23xcpa+haU5MLDNyNzCesQ==
 
 mathml-tag-names@^2.0.1:
   version "2.1.0"
@@ -9814,10 +9819,10 @@ webpack-sources@^1.1.0, webpack-sources@^1.3.0:
     source-list-map "^2.0.0"
     source-map "~0.6.1"
 
-webpack@4.26.1:
-  version "4.26.1"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.26.1.tgz#ff3a9283d363c07b3494dfa702d08f4f2ef6cb39"
-  integrity sha512-i2oOvEvuvLLSuSCkdVrknaxAhtUZ9g+nLSoHCWV0gDzqGX2DXaCrMmMUpbRsTSSLrUqAI56PoEiyMUZIZ1msug==
+webpack@4.28.4:
+  version "4.28.4"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.28.4.tgz#1ddae6c89887d7efb752adf0c3cd32b9b07eacd0"
+  integrity sha512-NxjD61WsK/a3JIdwWjtIpimmvE6UrRi3yG54/74Hk9rwNj5FPkA4DJCf1z4ByDWLkvZhTZE+P3C/eh6UD5lDcw==
   dependencies:
     "@webassemblyjs/ast" "1.7.11"
     "@webassemblyjs/helper-module-context" "1.7.11"

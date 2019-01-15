@@ -35,6 +35,7 @@
    },
    "dependencies": {
       "@firebase/app": "^0.3.5",
-      "@firebase/auth": "^0.9.1"
+      "@firebase/auth": "^0.9.1",
+      "@toba/state": "^2.0.0"
    }
 }

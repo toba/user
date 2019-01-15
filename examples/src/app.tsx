@@ -1,55 +1,34 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import firebase from '@firebase/app';
-import '@firebase/auth';
 import { Provider, initialize } from '../../src/';
-import { FirebaseAuth, User, Error as AuthError } from '@firebase/auth-types';
-import { FirebaseApp } from '@firebase/app-types';
+import { FluxComponent } from '@toba/state';
+import { userState, UserState, Action } from '../../src';
 
 interface State {
-   user: User | null;
-   error: AuthError | null;
+   user: UserState;
+   error: { message: string } | null;
 }
 
-const app: FirebaseApp = initialize({
+initialize({
    projectID: 'toba-test-752e6',
    apiKey: 'AIzaSyCRUHTQMU3JtDRj_GUSpP7E-u1sHGzK-rc',
    senderID: '758268537371',
    provider: [Provider.Facebook, Provider.Google]
 });
 
-export class ExampleApp extends React.Component<any, State> {
-   auth: FirebaseAuth;
-
+export class ExampleApp extends FluxComponent<any, State> {
    constructor(props: any) {
-      super(props);
-
-      this.auth = app!.auth!();
-      this.state = {
-         user: null,
-         error: null
-      };
+      super(props, { user: userState }, { error: null });
+      this.emit(Action.Initialize);
    }
-
-   signin = async () => {
-      const provider = new firebase!.auth!.FacebookAuthProvider();
-      try {
-         const res = await this.auth.signInWithPopup(provider);
-         this.setState({ user: res.user, error: null });
-      } catch (err) {
-         this.setState({ user: null, error: err });
-      }
-   };
 
    render() {
       return (
          <div>
             <h2>Example Application</h2>
-            {this.state.user !== null && (
-               <div>{this.state.user.displayName}</div>
-            )}
+            {this.state.user !== null && <div>{this.state.user.name}</div>}
             {this.state.error !== null && <div>{this.state.error.message}</div>}
-            <button onClick={this.signin}>Facebook Login</button>
+            <button onClick={this.do(Action.Login)}>Facebook Login</button>
          </div>
       );
    }
