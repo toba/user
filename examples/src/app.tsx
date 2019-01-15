@@ -19,7 +19,7 @@ initialize({
 export class ExampleApp extends FluxComponent<any, State> {
    constructor(props: any) {
       super(props, { user: userState }, { error: null });
-      this.emit(Action.Initialize);
+      this.emit(Action.Initialize, [Provider.Facebook, Provider.Google]);
    }
 
    render() {
@@ -28,7 +28,9 @@ export class ExampleApp extends FluxComponent<any, State> {
             <h2>Example Application</h2>
             {this.state.user !== null && <div>{this.state.user.name}</div>}
             {this.state.error !== null && <div>{this.state.error.message}</div>}
-            <button onClick={this.do(Action.Login)}>Facebook Login</button>
+            <button onClick={this.do(Action.Login, Provider.Facebook)}>
+               Facebook Login
+            </button>
          </div>
       );
    }

@@ -3,6 +3,7 @@ import firebase from '@firebase/app';
 import { is } from '@toba/tools';
 import { StateStore, flux } from '@toba/state';
 import { FirebaseAuth, User, AuthProvider } from '@firebase/auth-types';
+import { Provider } from './providers';
 import { Action } from './actions';
 
 export interface State {
@@ -12,11 +13,13 @@ export interface State {
    email: string | null;
    photoURL: string | null;
    emailVerified: boolean;
+   initialized: boolean;
 }
 
 const emptyState = Object.freeze<State>({
    id: null,
    loggedIn: false,
+   initialized: false,
    name: null,
    email: null,
    photoURL: null,
@@ -27,27 +30,28 @@ const emptyState = Object.freeze<State>({
  * @see https://firebase.google.com/docs/auth/web/manage-users
  */
 class UserState extends StateStore<State> {
-   providers: AuthProvider[] = [];
+   providers: Map<string, AuthProvider> = new Map();
    auth: FirebaseAuth;
-   initialized = false;
 
    constructor() {
       super(emptyState);
-      this.initialize();
    }
 
-   initialize() {
+   initialize(...providerID: string[]) {
       if (
-         this.initialized === false &&
+         this.state.initialized === false &&
          firebase !== undefined &&
          firebase.auth !== undefined &&
          firebase.apps.length > 0
       ) {
          this.auth = firebase.auth();
          this.onAuthChange(this.auth.currentUser);
-         this.providers.push(new firebase.auth.FacebookAuthProvider());
+         this.providers.set(
+            Provider.Facebook,
+            new firebase.auth.FacebookAuthProvider()
+         );
          this.auth.onAuthStateChanged(this.onAuthChange);
-         this.initialized = true;
+         this.setState({ initialized: true });
       }
    }
 
@@ -62,20 +66,23 @@ class UserState extends StateStore<State> {
             emailVerified: user.emailVerified
          });
       } else {
-         this.setState(emptyState);
+         this.setState({ ...emptyState, initialized: true });
       }
    };
 
-   async handler<T>(action: Action, data?: T) {
+   async handler(action: Action, data?: any) {
       switch (action) {
          case Action.Login:
-            const provider = this.providers[0];
-            const res = await this.auth.signInWithPopup(provider);
-
+            if (this.providers.has(data)) {
+               const provider = this.providers.get(data)!;
+               const res = await this.auth.signInWithPopup(provider);
+            }
             return;
 
          case Action.Initialize:
-            this.initialize();
+            if (is.array<string>(data)) {
+               this.initialize(...data);
+            }
             return;
 
          case Action.Logout:
