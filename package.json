@@ -18,7 +18,7 @@
    ],
    "scripts": {
       "prepublishOnly": "./node_modules/.bin/tsc --project tsconfig.build.json",
-      "test": "jest --coverage"
+      "test": "./node_modules/.bin/jest --coverage"
    },
    "devDependencies": {
       "@firebase/app-types": "^0.3.2",
