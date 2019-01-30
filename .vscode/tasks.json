@@ -49,29 +49,38 @@
          "problemMatcher": []
       },
       {
-         "label": "Example: View",
+         "label": "Example: Bundle",
+         "command": "${workspaceFolder}/node_modules/.bin/webpack",
          "options": {
-            "cwd": "${workspaceFolder}/examples"
+            "cwd": "${workspaceFolder}/node_modules/@toba/example/"
          },
-         "command": "${workspaceFolder}/node_modules/.bin/webpack-dev-server",
          "type": "shell",
-         "group": "test",
          "problemMatcher": []
       },
       {
-         "label": "Example: Bundle",
+         "label": "Example: Web",
+         "command": "${workspaceFolder}/node_modules/.bin/webpack-dev-server",
          "options": {
-            "cwd": "${workspaceFolder}/examples"
+            "cwd": "${workspaceFolder}/node_modules/@toba/example/build"
          },
-         "presentation": {
-            "showReuseMessage": false,
-            "clear": true
+         "type": "shell",
+         "problemMatcher": []
+      },
+      {
+         "label": "Example: iOS",
+         "command": "${workspaceFolder}/node_modules/.bin/expo",
+         "args": ["start", "--ios"],
+         "options": {
+            "cwd": "${workspaceFolder}/node_modules/@toba/example/"
          },
-         "command": "${workspaceFolder}/node_modules/.bin/webpack",
-         "type": "process",
-         "group": {
-            "kind": "build",
-            "isDefault": true
+         "problemMatcher": []
+      },
+      {
+         "label": "Example: Android",
+         "command": "${workspaceFolder}/node_modules/.bin/expo",
+         "args": ["start", "--android"],
+         "options": {
+            "cwd": "${workspaceFolder}/node_modules/@toba/example/"
          },
          "problemMatcher": []
       }

@@ -618,7 +618,7 @@
     "@babel/helper-plugin-utils" "^7.0.0"
     "@babel/plugin-syntax-jsx" "^7.2.0"
 
-"@babel/plugin-transform-react-jsx@^7.0.0":
+"@babel/plugin-transform-react-jsx@^7.0.0", "@babel/plugin-transform-react-jsx@^7.3.0":
   version "7.3.0"
   resolved "https://registry.yarnpkg.com/@babel/plugin-transform-react-jsx/-/plugin-transform-react-jsx-7.3.0.tgz#f2cab99026631c767e2745a5368b331cfe8f5290"
   integrity sha512-a/+aRb7R06WcKvQLOu4/TpjKOdvVEKRLWFpKcNuHhiREPgGRB4TQJxq07+EZLS8LFVYpfq1a5lDUnuMdcCpBKg==
@@ -1099,9 +1099,9 @@
   integrity sha512-ONhaKPIufzzrlNbqtWFFd+jlnemX6lJAgq9ZeiZtS7I1PIf/la7CW4m83rTXRnVnsMbW2k56pGYu7AUFJD9Pow==
 
 "@toba/build@^4.4.4":
-  version "4.10.0"
-  resolved "https://registry.yarnpkg.com/@toba/build/-/build-4.10.0.tgz#862990467687c016f6d3af9281d579b4d1ebb6f6"
-  integrity sha512-P0X9WQL8s2/fpY50+Ign0+RL8YJ9xiyYoRzGGxEFrzp1VD3khw0KuYXl+26nqtsp3PJOmoNtuP+9iwfNCgQYhg==
+  version "4.12.3"
+  resolved "https://registry.yarnpkg.com/@toba/build/-/build-4.12.3.tgz#e1cab558c2b66d346ca74bc90ed025344490d72f"
+  integrity sha512-+imtPU1GzxUa74w0A6bn0l5PtQhcdIR2rawHF6NI4WupUAgP1SyeUCkm76QTcJFXY1okpMYhLQYH/Wi0YD6gug==
   dependencies:
     "@babel/core" "^7.2.2"
     "@babel/polyfill" "^7.2.5"
@@ -1145,9 +1145,9 @@
     typescript "^3.2.0"
 
 "@toba/example@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@toba/example/-/example-2.0.0.tgz#f2ca181e96cafcca0773d47739cbd32f3e7ec540"
-  integrity sha512-Ti+LeloRbcYyXjoA04FuLiKtUZzS+P9FVVc//SD0/V+eGl1ojJ11R9EoKNaTnj5mSJqpdeRGtvaU9ILfzUJ+pg==
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/@toba/example/-/example-2.0.4.tgz#c01d96589694f6bec137dc826761b57611a42d10"
+  integrity sha512-IDzJ13Vdog9ZYN9mYfk2D2skaWEV822Fu74Va1QNvTpkX5v8xgknBOPZtcWrCPDQ6CNmrApwL8DnvhqYu2Itng==
   dependencies:
     "@toba/build" "^4.4.4"
     "@types/react" "^16.7.18"
@@ -1161,18 +1161,19 @@
     react-native "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz"
 
 "@toba/state@^2.0.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@toba/state/-/state-2.1.0.tgz#148929b48413d524341fa6b4ec2ffbfd05141c7d"
-  integrity sha512-rsptLdDcfYjsGZbjUwVJQS9x4Ogwjw0V9gfxL1S9kkmf6cT2eRi75rIiuBmSt2LUaPaHKhP3fIG0WEg1TyO35Q==
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@toba/state/-/state-2.1.1.tgz#246cac373f69ab1fdf3076684cf20c5b8fb5a986"
+  integrity sha512-0ll2x8k2F6qj2UpfirUUcON1wFUcpP0zcD2b0LnrWSLtubhcnsbMnDjqg/Acc0LIJeZCmF43pHI917hfBobufg==
 
 "@toba/test@^3.0.0":
-  version "3.7.1"
-  resolved "https://registry.yarnpkg.com/@toba/test/-/test-3.7.1.tgz#513ae0cedbe4c0070b121af46ac69a45e414675f"
-  integrity sha512-o5QjrpHz81tsM6MbNuUMgrH0pHJbFHuLqFIPXgVi3+y+EkxrUYaQsyNGjCb3U05qaHgpjrAwisQcMM8VnPO7ag==
+  version "3.7.2"
+  resolved "https://registry.yarnpkg.com/@toba/test/-/test-3.7.2.tgz#4202ee0bf4a89e5a66ff013a843760b10b9a07e2"
+  integrity sha512-0Zn+AUyh5PyrBT0xF5RAn4vWVQVzTB1mXaragYF2/hHvoxpUEkqa+XdjEAoQFAOYSKMYmNgCXV4eHoujoFarBg==
   dependencies:
     "@babel/core" "^7.2.2"
     "@babel/plugin-proposal-class-properties" "^7.3.0"
     "@babel/plugin-syntax-dynamic-import" "^7.2.0"
+    "@babel/plugin-transform-react-jsx" "^7.3.0"
     "@babel/preset-env" "^7.3.1"
     "@babel/preset-typescript" "^7.1.0"
     "@toba/tools" "^6.0.0"
@@ -9749,9 +9750,9 @@ parse-json@^4.0.0:
     json-parse-better-errors "^1.0.1"
 
 parse-node-version@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/parse-node-version/-/parse-node-version-1.0.0.tgz#33d9aa8920dcc3c0d33658ec18ce237009a56d53"
-  integrity sha512-02GTVHD1u0nWc20n2G7WX/PgdhNFG04j5fi1OkaJzPWLTcf6vh6229Lta1wTmXG/7Dg42tCssgkccVt7qvd8Kg==
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/parse-node-version/-/parse-node-version-1.0.1.tgz#e2b5dbede00e7fa9bc363607f53327e8b073189b"
+  integrity sha512-3YHlOa/JgH6Mnpr05jP9eDG254US9ek25LyIxZlDItp2iJtwyaXQb57lBYLdT3MowkUFYEV2XXNAYIPlESvJlA==
 
 parse-passwd@^1.0.0:
   version "1.0.0"
