@@ -25,7 +25,7 @@
       "@firebase/auth-types": "^0.5.0",
       "@toba/build": "^4.4.4",
       "@toba/develop": "^4.0.0",
-      "@toba/example": "^1.0.0",
+      "@toba/example": "^2.0.0",
       "@toba/test": "^3.0.0",
       "@types/node": "^10.12.18"
    },
