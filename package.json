@@ -1,6 +1,6 @@
 {
    "name": "@toba/user",
-   "version": "1.0.0",
+   "version": "1.0.1",
    "description": "Toba user module",
    "private": false,
    "author": {
@@ -11,10 +11,10 @@
    "publishConfig": {
       "access": "public"
    },
-   "main": "dist/index.js",
-   "types:": "dist/index.d.ts",
+   "main": "es6/index.js",
+   "types:": "es6/index.d.ts",
    "files": [
-      "dist/**/*"
+      "es6/**/*"
    ],
    "scripts": {
       "prepublishOnly": "./node_modules/.bin/tsc --project tsconfig.build.json",
@@ -24,7 +24,6 @@
       "@firebase/app-types": "^0.3.2",
       "@firebase/auth-types": "^0.5.0",
       "@toba/build": "^4.4.4",
-      "@toba/develop": "^4.0.0",
       "@toba/example": "^2.0.0",
       "@toba/test": "^3.0.0",
       "@types/node": "^10.12.18"
